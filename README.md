@@ -7,12 +7,12 @@ This project implements 2D acoustic wave forward modeling in vertical transverse
 
 ### 🔧 Main Forward Modeling Scripts
 
-| File Name                                                      | Description                                                  |
-|---------------------------------------------------------------|--------------------------------------------------------------|
-| `staggered_grid_FD_symmetric_VTIacoustic.m`                   | Symmetric VTI acoustic wave forward modeling main script     |
-| `staggered_grid_FD_stable_non_symmetric_VTIacoustic.m`       | Non-symmetric, stable formulation of VTI forward modeling    |
-| `staggered_grid_FD_unstable_non_symmetric_VTIacoustic.m`     | Non-symmetric, *unstable* formulation (for testing purpose)  |
-
+| File Name                                                          | Description                                                  |
+|--------------------------------------------------------------------|--------------------------------------------------------------|
+| `staggered_grid_FD_symmetric_VTIacoustic.m`                        | Symmetric VTI acoustic wave forward modeling main script     |
+| `staggered_grid_FD_stable_adjoint_non_symmetric_VTIacoustic.m`     | Non-symmetric, stable formulation of VTI adjoint modeling    |
+| `staggered_grid_FD_unstable_adjoint_non_symmetric_VTIacoustic.m`   | Non-symmetric, *unstable* formulation (for testing purpose)  |
+| `staggered_grid_FD_nonsymmetric_VTIacoustic.m`                     | Non-symmetric, VTI acoustic wave forward modeling main script|
 ### 📐 Model Parameter Files (`.vel` and `.bin`)
 
 These files store 2D spatial models in **float32 binary** format, saved **column-wise (Fortran-style)**.
@@ -58,6 +58,10 @@ These files store 2D spatial models in **float32 binary** format, saved **column
 
 ```matlab
 % Execute the script of symmetric VTI acoustic forward modeling in matlab
-staggered_grid_FD_stable_non_symmetric_VTIacoustic.m
+staggered_grid_FD_nonsymmetric_VTIacoustic.m
+staggered_grid_FD_stable_adjoint_non_symmetric_VTIacoustic.m
 staggered_grid_FD_symmetric_VTIacoustic.m
-staggered_grid_FD_unstable_non_symmetric_VTIacoustic.m
+staggered_grid_FD_unstable_adjoint_non_symmetric_VTIacoustic.m
+
+
+
