@@ -1,4 +1,4 @@
-# 2D VTI Acoustic Wavefield and Its Adjoint Wavefield Simulation using Staggered Grid FD Method
+# 2D VTI Acoustic Wavefield and Its Adjoint Wavefield Simulation using Staggered-Grid Finite-Difference Method
 Tests for symmetric and non-symmetric VTI acoustic wave equations and their adjoint wave equations
 
 This project implements 2D acoustic wave forward modeling in vertical transverse isotropic (VTI) media using staggered grid finite difference (FD) schemes. It includes symmetric and non-symmetric formulations.
