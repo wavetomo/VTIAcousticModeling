@@ -7,12 +7,13 @@ This project implements 2D acoustic wave forward modeling in vertical transverse
 
 ### 🔧 Main Forward Modeling Scripts
 
-| File Name                                                          | Description                                                  |
-|--------------------------------------------------------------------|--------------------------------------------------------------|
-| `staggered_grid_FD_symmetric_VTIacoustic.m`                        | Symmetric VTI acoustic wave forward modeling main script     |
-| `staggered_grid_FD_stable_adjoint_non_symmetric_VTIacoustic.m`     | Non-symmetric, stable formulation of VTI adjoint modeling    |
-| `staggered_grid_FD_unstable_adjoint_non_symmetric_VTIacoustic.m`   | Non-symmetric, *unstable* formulation (for testing purpose)  |
-| `staggered_grid_FD_nonsymmetric_VTIacoustic.m`                     | Non-symmetric, VTI acoustic wave forward modeling main script|
+| File Name                                                          | Description                                                       |
+|--------------------------------------------------------------------|-------------------------------------------------------------------|
+| `staggered_grid_FD_symmetric_VTIacoustic.m`                        | Main script for symmetric VTI acoustic wave equation              |
+| `staggered_grid_FD_nonsymmetric_VTIacoustic.m`                     | Main script for non-symmetric VTI acoustic wave equation          |
+| `staggered_grid_FD_stable_adjoint_non_symmetric_VTIacoustic.m`     | Main script for stable adjoint of non-symmetric VTI equation      |
+| `staggered_grid_FD_unstable_adjoint_non_symmetric_VTIacoustic.m`   | Main script for *unstable* adjoint of non-symmetric VTI equation  |
+
 ### 📐 Model Parameter Files (`.vel` and `.bin`)
 
 These files store 2D spatial models in **float32 binary** format, saved **column-wise (Fortran-style)**.
@@ -28,12 +29,12 @@ These files store 2D spatial models in **float32 binary** format, saved **column
 
 #### Hess Model Files
 
-| File Name                       | Description              | Size (nz × nx) |
-|--------------------------------|--------------------------|----------------|
-| `vp_hess_366_882_25m.bin`      | Hess model for Vp        | 366 × 882      |
-| `rho_hess_366_882_25m.bin`     | Hess model for density   | 366 × 882      |
-| `delta_hess_366_882_25m.bin`   | Hess model for delta     | 366 × 882      |
-| `epsilon_hess_366_882_25m.bin` | Hess model for epsilon   | 366 × 882      |
+| File Name                       | Description                     | Size (nz × nx) |
+|--------------------------------|----------------------------------|----------------|
+| `vp_hess_366_882_25m.bin`      | P-wave velocity model            | 366 × 882      |
+| `rho_hess_366_882_25m.bin`     | Density model                    | 366 × 882      |
+| `delta_hess_366_882_25m.bin`   | Thomsen anisotropy parameter δ   | 366 × 882      |
+| `epsilon_hess_366_882_25m.bin` | Thomsen anisotropy parameter ε   | 366 × 882      |
 
 ### 📂 Utility Scripts
 
@@ -41,23 +42,23 @@ These files store 2D spatial models in **float32 binary** format, saved **column
 |-------------------|--------------------------------------------------------------|
 | `read_matrix.m`   | Read `.bin` and `.vel` binary matrix files into MATLAB       |
 | `Ricker.m`        | Generate Ricker wavelet                                      |
-| `boundary2dcut.m` | Apply absorbing boundary or sponge layers                    |
+| `boundary2dcut.m` | Remove absorbing boundary layer                              |
 | `modpad2d.m`      | Pad 2D models for boundary conditions                        |
-| `meal2d.m`        | Possibly for wavefield visualization or post-processing      |
+| `meal2d.m`        | Generate asborbing boundary                                  |
 
 ### 📄 Documentation
 
 | File Name                                       | Description                           |
 |------------------------------------------------|---------------------------------------|
 | `README.md`                                    | Project description and file guide    |
-| `Tests for symmetric and non-symmetric VTI acoustic wave.pptx` | Test case illustrations |
+| `Tests for symmetric and non-symmetric VTI acoustic wave.pptx` | Test cases illustrations |
 
 ---
 
 ## 🚀 Quick Start
 
 ```matlab
-% Execute the script of symmetric VTI acoustic forward modeling in matlab
+% Execute the script of symmetric VTI acoustic forward modeling in MATLAB
 staggered_grid_FD_nonsymmetric_VTIacoustic.m
 staggered_grid_FD_stable_adjoint_non_symmetric_VTIacoustic.m
 staggered_grid_FD_symmetric_VTIacoustic.m
